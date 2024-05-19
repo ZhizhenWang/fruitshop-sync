@@ -1,12 +1,10 @@
-import os
 from openai import OpenAI
-from pymongo import MongoClient
 
-from app.config import OPENAI_API_KEY
+from app.config import OPENAI_API_KEY, OPENAI_BASE_URL
 
 client = OpenAI(
     api_key=OPENAI_API_KEY,
-    base_url="https://api.chatanywhere.tech/v1"
+    base_url=OPENAI_BASE_URL
 )
 
 cached_colors = {}

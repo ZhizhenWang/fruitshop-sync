@@ -4,6 +4,8 @@ I use Python v3.11.9, however no latest feature from 3.11 is used in this projec
 
 Create one MongoDB database or use the default database in this project.
 
+Default MONGO_URI value is ``, user `rexroth` has read/write permission to products collections. Please do not abuse this demo user.
+
 Install python packages via `pip install -r requirements.txt`, or install manually
   - request package (requests 2.31.0)
   - MongoDB client package (pymongo 4.7.2)
@@ -110,7 +112,8 @@ python chatgpt.py
 
 ## Final result
 Preview of MongoDB products collection
-![](imgs\mongodb_schema.png)
+
+<img src="imgs\mongodb_schema.png" width="80%">
 
 Run query result:
 ```shell
