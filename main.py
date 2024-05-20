@@ -9,7 +9,7 @@ def cli():
     subparsers = parser.add_subparsers(dest="command")
 
     subparsers.add_parser("initdb", help="Initialize relation database with mock data")
-    subparsers.add_parser("sync", help="Synchronize Fruit shop API data and relation data into MongoDB")
+    subparsers.add_parser("sync", help="Synchronize fruit shop API data and relation data into MongoDB")
     subparsers.add_parser("query", help="Execute MongoDB query")
     subparsers.add_parser("update", help="Update product color through ChatGPT")
 

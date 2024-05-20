@@ -17,7 +17,6 @@ def run():
     # Merge data and upsert into MongoDB
     requests_list = []
 
-    # TODO: products_data can really big, therefore upsert operation can match many docs, find better solution here
     for product in products_data:
         product_id = product["id"]
         product_name = product["name"]

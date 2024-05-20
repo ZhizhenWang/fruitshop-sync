@@ -8,6 +8,7 @@ mongo_collection = mongo_db["products"]
 
 # Create necessary indexes for the MongoDB collections.
 def create_indexes():
+    # for an index that already exists, MongoDB does not recreate the index
     mongo_collection.create_index("product_id", unique=True, background=True)
     mongo_collection.create_index("children", background=True)
     mongo_collection.create_index("parents", background=True)
