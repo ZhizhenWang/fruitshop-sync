@@ -8,7 +8,7 @@ Install python packages via `pip install -r requirements.txt`, or install manual
   - OpenAI REST API package (openai 1.30.1)
   - package to load environment variable from .env file (python-dotenv 1.0.1)
 ### MongoDB setup
-Create one MongoDB database or use the default database in this project. Default env `MONGO_URI` value is ``, user `rexroth` has read/write permission to products collections. Please do not abuse this demo user.
+Create one MongoDB database and set env variable `MONGO_URI` value.
 
 ### Environment variables
 Following table lists all environment variables, you can set them in `.env` file or bash
@@ -22,13 +22,13 @@ MY_VARIABLE=value
 export MY_VARIABLE="value"
 ```
 
-| Environment Variable | Usage                 | Default Value                                                                                            |
-|:---------------------|:----------------------|:---------------------------------------------------------------------------------------------------------|
-| FRUITSHOP_BASE_URL   | Url of fruit shop api | https://api.predic8.de/shop/v2                                                                           |
-| MONGO_URI            | MongoDB URI           |  |
-| SQLITE_DB_PATH       | SQLite file location  | app/database/product_hierarchy.db                                                                        |
-| OPENAI_BASE_URL      | OpenAI REST API URL   | https://api.openai.com/v1                                                                                |
-| OPENAI_API_KEY       | OpenAI REST API Key   |                                                                                                          |
+| Environment Variable | Usage                 | Default Value                     |
+|:---------------------|:----------------------|:----------------------------------|
+| FRUITSHOP_BASE_URL   | Url of fruit shop api | https://api.predic8.de/shop/v2    |
+| MONGO_URI            | MongoDB URI           |                                   |
+| SQLITE_DB_PATH       | SQLite file location  | app/database/product_hierarchy.db |
+| OPENAI_BASE_URL      | OpenAI REST API URL   | https://api.openai.com/v1         |
+| OPENAI_API_KEY       | OpenAI REST API Key   |                                   |
 
 Please get ChatGPT API Key from [here](https://platform.openai.com/api-keys) and set corresponding env `OPENAI_API_KEY` value. You can set env `OPENAI_API_BASE` to use alternative gpt proxy.
 
@@ -175,7 +175,7 @@ Based on platform you can query data via MongoDB Shell
 Here use macOS as an example:
 ```shell
 # Connect to mongodb database and enter password
-mongosh "mongodb+srv://demo-cluster.mhnmowz.mongodb.net/" --apiVersion 1 --username rexroth
+mongosh <your_mongo_uri> --apiVersion 1 --username <your_mongo_user>
 
 # After login, switch to the desired database
 use fruit_store
@@ -192,6 +192,6 @@ Preview of MongoDB products collection
 ## Feature work
 
 - api query can fetch first 100 items due to limit, need to refactor code to fetch all items
-- use logging package instead of print
+- ~~use logging package instead of print~~
 - add create_time and update_time in mongo `products` collection
 - ask chatgpt about product color based on product image
