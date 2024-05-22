@@ -192,6 +192,6 @@ Preview of MongoDB products collection
 ## Feature work
 
 - api query can fetch first 100 items due to limit, need to refactor code to fetch all items
-- use logging package instead of print
+- ~~use logging package instead of print~~
 - add create_time and update_time in mongo `products` collection
 - ask chatgpt about product color based on product image

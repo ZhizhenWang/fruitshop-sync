@@ -2,6 +2,7 @@ import os
 import sqlite3
 
 from app.config import SQLITE_DB_PATH
+from app.logger import get_logger
 
 
 def get_sqlite_connection():
@@ -9,10 +10,11 @@ def get_sqlite_connection():
 
 
 def initialize_relation():
+    logger = get_logger()
     file_exists = os.path.exists(SQLITE_DB_PATH)
 
     if file_exists:
-        print(f"The SQLite database file already exists.")
+        logger.info(f"The SQLite database file already exists.")
         return
 
     conn = get_sqlite_connection()
@@ -35,7 +37,7 @@ def initialize_relation():
 
     conn.commit()
     conn.close()
-    print("The SQLite database has been initialized.")
+    logger.info("The SQLite database has been initialized.")
 
 
 # Fetching relations data from SQLite DB
